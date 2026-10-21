@@ -6,7 +6,18 @@
 
 - Git、エディター（VS Codeなど）、GitHubアカウントを用意します。
 - 講師からリポジトリへの招待を受け、承認します。書き込み権限が必要です。
-- 以下はSSHでGitHubに接続できる環境向けです。`Permission denied (publickey)` が出たら講師にSSH認証を確認してもらってください。
+- HTTPSでクローンします。プッシュにはGitHubへの認証が必要です。
+- すでにHTTPSでプッシュできる人は、その認証設定を使ってください。
+- 未設定なら、GitHub CLI（`gh`）をインストールし、次を実行します。
+
+  ```bash
+  gh auth login
+  gh auth setup-git
+  ```
+
+  `GitHub.com` → `HTTPS` → ブラウザでのログインを選び、表示に従って認証します。
+  `gh` が見つからない場合は講師に準備を依頼してください。
+  参考: [GitHub公式のHTTPS認証手順](https://docs.github.com/en/get-started/git-basics/caching-your-github-credentials-in-git)
 - `taro` は例です。ブランチ名は自分の名前に置き換えます。
 
 ## 今回の仕事
@@ -20,17 +31,17 @@
 作業したいフォルダでターミナルを開き、実行します。
 
 ```bash
-git clone git@github.com:RM0428MR/git-conflict-practice.git
+git clone https://github.com/RM0428MR/git-conflict-practice.git
 cd git-conflict-practice
 ```
 
 ## 2. 研修開始地点から自分のブランチを作る
 
 ```bash
-git switch -c practice/taro training-start
+git switch -c practice/taro training-start-https
 ```
 
-`training-start` はmainの開店時刻が変わる前の状態に付けたタグです。
+`training-start-https` はmainの開店時刻が変わる前の状態に付けたタグです。
 **今回はmainからではなく、このタグから始めてください。** ここが競合を体験するためのポイントです。
 
 ## 3. ファイルを編集する

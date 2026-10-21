@@ -1,7 +1,7 @@
 # 講師向け: 公開・権限の設定
 
 この教材は `RM0428MR/git-conflict-practice` に公開済みです。
-更新版ではmainとtraining-startタグを使います。研修用PRは研修生自身が作ります。
+更新版ではmainとtraining-start-httpsタグを使います。研修用PRは研修生自身が作ります。
 
 ## 研修前の準備
 
@@ -15,7 +15,7 @@
 準備済みのローカルリポジトリから実行します。`YOUR_ACCOUNT` と `NEW_REPO` は実際の公開先へ置き換えます。
 
 ```bash
-git push git@github.com:YOUR_ACCOUNT/NEW_REPO.git main refs/tags/training-start
+git push https://github.com/YOUR_ACCOUNT/NEW_REPO.git main refs/tags/training-start-https
 ```
 
 READMEにあるクローン先・PR作成先のURLも、新しいリポジトリに合わせて案内してください。
